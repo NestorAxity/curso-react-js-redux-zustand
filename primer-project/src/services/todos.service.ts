@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const API_URL = 'https://jsonplaceholder.typicode.csdom'
+const API_URL = 'https://jsonplaceholder.typicode.com'
 
 export const getTodos = async() => {
     try {

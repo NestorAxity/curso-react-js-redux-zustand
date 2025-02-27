@@ -66,7 +66,7 @@ app.post('/login', async (req, res) => {
     maxAge: 3600000, // 1 hora
   });
 
-  res.json({ message: 'Login exitoso'});
+  res.status(200).json({ message: 'Login exitoso', status: 200});
 });
 
 // 👉 Ruta protegida (requiere autenticación)
