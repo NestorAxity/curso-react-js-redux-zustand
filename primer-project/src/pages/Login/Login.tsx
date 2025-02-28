@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { loginService } from '../../services/auth.service';
 import {useNavigate} from 'react-router-dom'
 import './Login.css';
-import { AuthResponse } from '../../types';
-import { loginAction } from '../../state/actions/AuthAction';
-import {useSelector, useDispatch} from 'react-redux'
-
+import { useAuthStore } from '../../store/authStore';
 
 const Login: React.FC = () => {
     const [username, setUsername] = useState<string>('');
@@ -14,18 +10,18 @@ const Login: React.FC = () => {
 
     const navigate = useNavigate()
 
-    const isAuhenticated = useSelector((state) => state.Auth.isAuthenticated)
-    const dispatch = useDispatch()
+    const isAuthenticated = useAuthStore((state) => state.isAuthenticated)
+    const loginAction = useAuthStore((state) => state.login)
 
     useEffect(() => {
-        if (isAuhenticated) {
+        if (isAuthenticated) {
             navigate('/home')
         }
-    }, [isAuhenticated, navigate]);
+    }, [isAuthenticated, navigate]);
 
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
-        dispatch(loginAction(username, password))
+        loginAction(username, password)
         // loginService(username, password)
         // .then((response: AuthResponse) => {
         //     if (response && response?.status === 200) { 
