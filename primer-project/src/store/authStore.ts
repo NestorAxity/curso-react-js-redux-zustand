@@ -15,12 +15,12 @@ export const useAuthStore = create<AuthState>(
       error: false,
       login: (username: string, password: string) =>
         loginService(username, password)
-          .then(() =>
-            set({ isAuthenticated: true }, false, { type: "loginSuccess" })
-          )
-          .catch(() =>
-            set({ isAuthenticated: false }, false, { type: "loginError" })
-          ),
+        .then(() =>
+          set({ isAuthenticated: true }, false, { type: "loginSuccess" })
+        )
+        .catch(() =>
+          set({ isAuthenticated: false }, false, { type: "loginError" })
+        ),
 
       checkAuth: async () => {
         try {

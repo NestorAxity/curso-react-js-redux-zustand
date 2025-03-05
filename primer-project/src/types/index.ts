@@ -12,3 +12,9 @@ export interface AuthState {
     logout: () => Promise<string>;
     refreshToken: () => Promise<AuthResponse>;
 }
+
+export interface RegState {
+    isRegistred: boolean,
+    regis: (username: string, password: string) => Promise<AuthResponse>,
+    regisOut: () => void
+}

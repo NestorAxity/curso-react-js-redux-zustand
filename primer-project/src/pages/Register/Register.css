@@ -1,12 +1,13 @@
-.login-container {
-    max-width: 400px; /* Ancho máximo del contenedor */
+.form-container {
+    max-width: 600px; /* Ancho máximo del contenedor */
     width: 100%; /* Permitir que el contenedor se ajuste al ancho de la pantalla */
     margin: auto;
-    margin-top: 40px;
-    padding: 20px;
+    margin-top: 80px;
+    padding: 40px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+
     display: flex;
     flex-direction: column; /* Organiza los elementos en columna */
     align-items: center; /* Centra los elementos en el eje horizontal */
@@ -26,7 +27,6 @@ form {
 label{
     text-align: left;
 }
-
 
 input{
     padding: 10px;
@@ -78,14 +78,6 @@ button {
 
 button:hover {
     background-color: #0056b3;
-}
-
-.reg-button{
-    background-color: #00cc55;
-}
-
-.reg-button:hover{
-    background-color: #0f6f34;
 }
 
 @media (max-width: 500px) {
